@@ -1,0 +1,144 @@
+body,
+button,
+dd,
+div,
+dl,
+dt,
+form,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+input,
+li,
+ol,
+p,
+td,
+textarea,
+th,
+ul {
+  margin: 0;
+  padding: 0;
+}
+ul {
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+}
+#banner {
+  position: relative;
+  width: 1200px;
+  height: 320px;
+  margin: 0 auto;
+  overflow: hidden;
+ 
+}
+#banner .banner-img {
+  position: absolute;
+  left:-1200px;
+  top: 0;
+  width: 600%;
+  height: 100%;
+ 
+}
+#banner .banner-img .img-item {
+  width: 1200px;
+  height: 100%;
+  float: left;
+}
+#banner .banner-tabs {
+  position: absolute;
+  left: 50%;
+  bottom: 10px;
+  transform: translateX(-50%);
+}
+#banner .banner-tabs span {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  background: #999;
+  border-radius: 50%;
+  cursor: pointer;
+}
+#banner .banner-tabs span:hover {
+  background: #10c55b;
+}
+#banner .banner-tabs .active {
+  background: #10c55b;
+}
+#banner .btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 35px;
+  height: 70px;
+  border-radius: 3px;
+  cursor: pointer;
+  z-index: 1;
+}
+#banner .prev {
+  left: 5px;
+  background: url(//icon.51yuansu.com/component/index/img/index-banner-al.png) center no-repeat;
+  background-color: rgba(0,0,0,0.5);
+  opacity: 0;
+}
+#banner .next {
+  right: 5px;
+  background: url(//icon.51yuansu.com/component/index/img/index-banner-ar.png) center no-repeat;
+  background-color: rgba(0,0,0,0.5);
+  opacity: 0;
+}
+#banner:hover .animated {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+@-webkit-keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translate3d(-100%,-50%,0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0,-50%,0);
+  }
+}
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translate3d(-100%,-50%,0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0,-50%,0);
+  }
+}
+#banner:hover .fadeInLeft {
+  animation-name: fadeInLeft;
+}
+@-webkit-keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translate3d(100%,-50%,0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0,-50%,0);
+  }
+}
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translate3d(100%,-50%,0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0,-50%,0);
+  }
+}
+#banner:hover .fadeInRight {
+  animation-name: fadeInRight;
+}
