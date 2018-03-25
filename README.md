@@ -169,7 +169,7 @@
 
 ```
 ### 2. 图片左右滑动
-要实现图片左右滑动就要计算出滑动的距离，通过设置图片区域的位置，来控制显示哪一张图片。
+要实现图片左右滑动就要计算出滑动的距离，通过设置图片区域的位置，来控制显示哪一张图片。具体思路见下面的描述，可能语言表达的有一些不清晰，还望见谅。
 
 ```js
     // offset为图片每次应该滑动的距离
@@ -185,4 +185,41 @@
             bannerImg.style.left = -imgWidth + "px" // 那么这时候应该显示第一张
         }
     }
+```
+### 3.左右按钮点击事件
+左右按钮点击主要是根据上面的滑动函数，如果是往右点，那么就是offset的值就应该是每张图片大小的赋值；如果是往左点offset的值就应该是每张图片大小。我们还需要设置一个index值来表示图片的索引，即当前图片是第几张。
+
+还有就是要注意临界的问题，就是当且换到了第4张的时候，这时候应该让index的值变成第一张的索引值，即初始值0；反之如果切换到第一张index就要变成最后一张图片的索引。
+
+```js
+ // 左右按钮点击事件
+    var banner = document.getElementById("banner");
+    var bannerImg = document.querySelector(".banner-img");
+    var bannerTabs = document.querySelectorAll(".banner-tabs span");
+    var prev = document.querySelector(".prev");
+    var next = document.querySelector(".next");
+    // index为每次滑动图片的索引
+    var index = 0;
+    // 定义计时器
+    var timer;
+    banner.addEventListener("click", function (e) {
+        var event = e || window.event;
+        var target = event.target || event.srcElement;
+        if (target == next) {
+            index++;
+            if (index > bannerTabs.length-1) {
+                index = 0;
+            }
+            addCtiveClass();
+            slideImg(-1200, 1200, 4);
+        }
+        if (target == prev) {
+            index--;
+            if (index < 0) {
+                index = bannerTabs.length-1;
+            }
+            addCtiveClass();
+            slideImg(1200, 1200, 4);
+        }
+    });
 ```
