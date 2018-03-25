@@ -223,3 +223,19 @@
         }
     });
 ```
+### 3.底部按钮功能实现
+
+底部按钮有分成两部分：
+
+* #### 切换图片时对应选中样式
+也就是通过索引值index得到当亲是那张图片，在将对应的按钮加上选中时的样式,每次先清空底部按钮的选中类，再给当前项加上样式
+```js
+  function addCtiveClass() {
+        bannerTabs.forEach(function (currentValue, key, array) {
+            // 先清空选中的类
+            currentValue.className = '';
+        }, this)
+        // 当前项添加选中样式
+        bannerTabs[index].className = "active";
+    }
+``
