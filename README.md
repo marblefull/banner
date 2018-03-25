@@ -257,3 +257,32 @@
          }, false)
     }, this);
 ```
+### 4.图片自动播放
+
+要实现自动播放，可以通过定时器setInterval来实现，也就是相当于每过几秒就执行一次和点击右按钮一样的操作：
+```js
+ // 自动播放
+    function autoSlide() {
+        timer = setInterval(function () {
+            index++;
+            if (index > bannerTabs.length-1) {
+                index = 0;
+            }
+            addCtiveClass();
+            slideImg(-1200, 1200, 4);
+        }, 4000);
+    }
+```   
+### 5.鼠标经过停止播放，鼠标移开继续播放
+就是鼠标经过时清除定时器，鼠标离开时继续自动播放函数，用到onmouseover()和onmouseout函数
+```js
+   // 鼠标移动上面，清除定时器
+    banner.addEventListener("mouseover", function () {
+        clearInterval(timer);
+    }, false);
+    // 鼠标离开，自动播放
+    banner.addEventListener("mouseout", function () {
+        autoSlide();
+    }, false)
+    // 自动播放
+```
