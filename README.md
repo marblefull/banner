@@ -168,3 +168,21 @@
 }
 
 ```
+### 2. 图片左右滑动
+要实现图片左右滑动就要计算出滑动的距离，通过设置图片区域的位置，来控制显示哪一张图片。
+
+```js
+    // offset为图片每次应该滑动的距离
+    // imgWidth为图片容器的宽度
+    // len为图片的张数
+    function slideImg(offset, imgWidth, len) {
+        var realLeft = parseInt(bannerImg.style.left) + offset // 当前图片区域真正的left值
+        bannerImg.style.left = realLeft + "px"; // 设置图片区域的left值
+        if (realLeft > -imgWidth) { // 如果当前图片区域left值大于第一张图片显示的left值，也就是这时候已经切换到第一张还要往左
+            bannerImg.style.left = -imgWidth * len + "px" // 那么这时候应该显示最后一张
+        }
+        if (realLeft < -imgWidth * len) { // 如果当前图片区域left值小于最后一张图片显示的left值，也就是这时候已经切换到最后一张还                                           // 要往右
+            bannerImg.style.left = -imgWidth + "px" // 那么这时候应该显示第一张
+        }
+    }
+```
