@@ -274,7 +274,7 @@
     }
 ```   
 ### 5.鼠标经过停止播放，鼠标移开继续播放
-就是鼠标经过时清除定时器，鼠标离开时继续自动播放函数，用到onmouseover()和onmouseout函数
+就是鼠标经过时清除定时器，鼠标离开时继续自动播放函数，用到[onmouseover()](https://developer.mozilla.org/zh-CN/docs/Web/API/GlobalEventHandlers/onmouseover)和[onmouseout()](https://developer.mozilla.org/zh-CN/docs/Web/API/GlobalEventHandlers/onmouseout)函数
 ```js
    // 鼠标移动上面，清除定时器
     banner.addEventListener("mouseover", function () {
@@ -286,3 +286,13 @@
     }, false)
     // 自动播放
 ```
+# 总结
+总结了一下其中用到的知识
+* overflow属性
+* position的用法
+* float浮动用法
+* 原生JS元素获取的方法
+* JS设置样式
+* 定时器IsetInterval的使用
+* 事件监听与事件委托
+* 鼠标事件onmouseover和onmouseout
