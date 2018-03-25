@@ -241,3 +241,19 @@
 ```
 * #### 按钮点击事件
 点击按钮时除了要执行上面的内容外，还要实现点击按钮时显示对应的图片。因为显示哪张图片是通过偏移量来实现的，那么我们就要算出这个偏移量offset。offset的值就是当前点击按钮也就意味着我要显示哪一张图片，减去当前显示的图片的索引，在乘以每张图片单位内的偏移量就可以了。
+```js
+ // 底部按钮点击事件
+    bannerTabs.forEach(function (currentValue, key, array) {
+        currentValue.addEventListener("click", function () {
+            {
+                if (currentValue.className == 'active') {  //如果点击的按钮就是当前项，则不执行下面内容
+                    return;
+                }
+                var offset = parseInt((key - index) * (-1200));
+                slideImg(offset, 1200, 4);
+                index = key;  // 显示完图片之后，改变当前图片的索引
+                addCtiveClass(); // 并添加样式
+            }
+         }, false)
+    }, this);
+```
