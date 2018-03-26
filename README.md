@@ -293,6 +293,6 @@
 * float浮动用法
 * 原生JS元素获取的方法
 * JS设置样式
-* 定时器IsetInterval的使用
+* 定时器setInterval的使用
 * 事件监听与事件委托
 * 鼠标事件onmouseover和onmouseout
