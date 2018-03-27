@@ -8,20 +8,14 @@ window.onload = function () {
     var index = 0;
     // 定义计时器
     var timer;
-    bannerImg.style.left = "-1200px"
+    bannerImg.style.left = "0px"
     // 图片切换
     // offset为图片每次应该滑动的距离
     // imgWidth为图片容器的宽度
     // len为图片的张数
-    function slideImg(offset, imgWidth, len) {
-        var realLeft = parseInt(bannerImg.style.left) + offset
-        bannerImg.style.left = realLeft + "px";
-        if (realLeft > -imgWidth) {
-            bannerImg.style.left = -imgWidth * len + "px"
-        }
-        if (realLeft < -imgWidth * len) {
-            bannerImg.style.left = -imgWidth + "px"
-        }
+    function slideImg(imgWidth) {
+        bannerImg.style.left = -imgWidth * index + "px";
+        
     }
     // 给底部小按钮添加选中的样式
     function addCtiveClass() {
@@ -40,8 +34,8 @@ window.onload = function () {
                 index = 0;
             }
             addCtiveClass();
-            slideImg(-1200, 1200, 4);
-        }, 4000);
+            slideImg(1200);
+        }, 3000);
     }
     
     // 左右按钮点击事件
@@ -54,7 +48,7 @@ window.onload = function () {
                 index = 0;
             }
             addCtiveClass();
-            slideImg(-1200, 1200, 4);
+            slideImg(1200);
         }
         if (target == prev) {
             index--;
@@ -62,7 +56,8 @@ window.onload = function () {
                 index = bannerTabs.length-1;
             }
             addCtiveClass();
-            slideImg(1200, 1200, 4);
+            slideImg(1200);
+            
         }
     })
 
@@ -73,15 +68,11 @@ window.onload = function () {
                 if (currentValue.className == 'active') {
                     return;
                 }
-                var offset = parseInt((key - index) * (-1200));
-                slideImg(offset, 1200, 4);
+                bannerImg.style.left = -1200 * key + "px";
                 index = key;
                 addCtiveClass();
             }
          }, false)
-        // currentValue.onclick = function () {
-
-        // }
     }, this);
     // 鼠标移动上面，清除定时器
     banner.addEventListener("mouseover", function () {

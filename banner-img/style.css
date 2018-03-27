@@ -1,34 +1,9 @@
-body,
-button,
-dd,
-div,
-dl,
-dt,
-form,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-hr,
-input,
-li,
-ol,
-p,
-td,
-textarea,
-th,
-ul {
+
+*{
   margin: 0;
   padding: 0;
 }
-ul {
-  list-style-type: none;
-}
-a {
-  text-decoration: none;
-}
+
 #banner {
   position: relative;
   width: 1200px;
@@ -39,9 +14,8 @@ a {
 }
 #banner .banner-img {
   position: absolute;
-  left:-1200px;
   top: 0;
-  width: 600%;
+  width: 400%;
   height: 100%;
  
 }
