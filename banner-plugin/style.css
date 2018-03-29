@@ -7,16 +7,18 @@
   
   .banner {
     position: relative;
-    margin: 0 auto;
+    margin: 20px auto;
     overflow: hidden;
    
   }
   .banner .banner-img {
     position: absolute;
     top: 0;
+    height: 100%;
   }
   .banner .banner-img .img-item {
     float: left;
+    height: 100%;
   }
   .banner .banner-tabs {
     position: absolute;
@@ -31,6 +33,7 @@
     background: #999;
     border-radius: 50%;
     cursor: pointer;
+    margin: 6px;
   }
   .banner .banner-tabs span:hover {
     background: #10c55b;
